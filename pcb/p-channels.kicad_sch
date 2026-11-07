@@ -4,12 +4,12 @@
 	(generator_version "10.0")
 	(uuid "99e89318-3c02-4d97-8976-a8863433071d")
 	(paper "A4")
-    (title_block
-                (title "p-channels")
-                (date "${DATE}")
-                (rev "${VERSION}")
-                (company "Qetesh")
-            )
+	(title_block
+		(title "p-channels")
+		(date "${DATE}")
+		(rev "${VERSION}")
+		(company "Qetesh")
+	)
 	(lib_symbols
 		(symbol "74xx:74HC238"
 			(exclude_from_sim no)
@@ -2306,7 +2306,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0b791efb-77cf-45c3-bc13-6e30895195d0")
-		(property "Reference" "R17"
+		(property "Reference" "R19"
 			(at 38.1 151.1299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2381,7 +2381,7 @@
 		(instances
 			(project "displaytronic"
 				(path "/4de28978-afad-4942-881a-b658e98f1f87/171372d4-ff97-4519-9446-535535aed0aa"
-					(reference "R17")
+					(reference "R19")
 					(unit 1)
 				)
 			)
@@ -2399,7 +2399,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "224cc65f-f21f-4c9a-9a57-2db92bfe5d7b")
-		(property "Reference" "#PWR039"
+		(property "Reference" "#PWR042"
 			(at 64.77 54.61 0)
 			(hide yes)
 			(show_name no)
@@ -2459,7 +2459,7 @@
 		(instances
 			(project "displaytronic"
 				(path "/4de28978-afad-4942-881a-b658e98f1f87/171372d4-ff97-4519-9446-535535aed0aa"
-					(reference "#PWR039")
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
@@ -2634,7 +2634,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "29016e1f-a03d-4e7d-93b3-5c27f107a401")
-		(property "Reference" "#PWR044"
+		(property "Reference" "#PWR047"
 			(at 35.56 151.13 0)
 			(hide yes)
 			(show_name no)
@@ -2694,7 +2694,7 @@
 		(instances
 			(project "displaytronic"
 				(path "/4de28978-afad-4942-881a-b658e98f1f87/171372d4-ff97-4519-9446-535535aed0aa"
-					(reference "#PWR044")
+					(reference "#PWR047")
 					(unit 1)
 				)
 			)
@@ -2825,7 +2825,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "48a89457-36db-4eb7-ab2b-d953c835b017")
-		(property "Reference" "#PWR040"
+		(property "Reference" "#PWR043"
 			(at 48.26 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -2886,7 +2886,7 @@
 		(instances
 			(project "displaytronic"
 				(path "/4de28978-afad-4942-881a-b658e98f1f87/171372d4-ff97-4519-9446-535535aed0aa"
-					(reference "#PWR040")
+					(reference "#PWR043")
 					(unit 1)
 				)
 			)
@@ -3273,7 +3273,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9a513ac9-e49b-4249-bb14-fb7e5b0f6a83")
-		(property "Reference" "#PWR043"
+		(property "Reference" "#PWR046"
 			(at 48.26 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -3334,7 +3334,7 @@
 		(instances
 			(project "displaytronic"
 				(path "/4de28978-afad-4942-881a-b658e98f1f87/171372d4-ff97-4519-9446-535535aed0aa"
-					(reference "#PWR043")
+					(reference "#PWR046")
 					(unit 1)
 				)
 			)
@@ -3352,7 +3352,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a0c2c224-d0ba-4c6b-9372-68d51e39474d")
-		(property "Reference" "#PWR042"
+		(property "Reference" "#PWR045"
 			(at 64.77 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -3412,7 +3412,7 @@
 		(instances
 			(project "displaytronic"
 				(path "/4de28978-afad-4942-881a-b658e98f1f87/171372d4-ff97-4519-9446-535535aed0aa"
-					(reference "#PWR042")
+					(reference "#PWR045")
 					(unit 1)
 				)
 			)
@@ -3430,7 +3430,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b383a9c9-9994-47be-ae00-c42ab45bd1cb")
-		(property "Reference" "#PWR046"
+		(property "Reference" "#PWR049"
 			(at 35.56 176.53 0)
 			(hide yes)
 			(show_name no)
@@ -3490,7 +3490,7 @@
 		(instances
 			(project "displaytronic"
 				(path "/4de28978-afad-4942-881a-b658e98f1f87/171372d4-ff97-4519-9446-535535aed0aa"
-					(reference "#PWR046")
+					(reference "#PWR049")
 					(unit 1)
 				)
 			)
@@ -3508,7 +3508,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bf8a187a-c8dc-497f-943f-0f20641376d9")
-		(property "Reference" "#PWR041"
+		(property "Reference" "#PWR044"
 			(at 64.77 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -3568,7 +3568,7 @@
 		(instances
 			(project "displaytronic"
 				(path "/4de28978-afad-4942-881a-b658e98f1f87/171372d4-ff97-4519-9446-535535aed0aa"
-					(reference "#PWR041")
+					(reference "#PWR044")
 					(unit 1)
 				)
 			)
@@ -3586,7 +3586,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c159bec2-fa75-4793-8e7f-f5e6df93197b")
-		(property "Reference" "#PWR045"
+		(property "Reference" "#PWR048"
 			(at 64.77 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -3646,7 +3646,7 @@
 		(instances
 			(project "displaytronic"
 				(path "/4de28978-afad-4942-881a-b658e98f1f87/171372d4-ff97-4519-9446-535535aed0aa"
-					(reference "#PWR045")
+					(reference "#PWR048")
 					(unit 1)
 				)
 			)
