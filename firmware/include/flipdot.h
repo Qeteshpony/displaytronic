@@ -15,14 +15,16 @@ class Display
     static constexpr uint8_t SEGMENTS_PER_BOARD = 4;
     static constexpr uint8_t COLS_PER_SEGMENT = 7;
     static constexpr uint16_t MAX_PULSE_LENGTH = 1000;
+    static constexpr bool WHITE = true;
+    static constexpr bool BLACK = false;
 
     void init(uint8_t num_boards);
+    void fill(bool color);
     void clear();
-    void setPixel(uint8_t x, uint8_t y, bool on);
+    void setPixel(uint8_t x, uint8_t y, bool color);
     void update(bool slowdown = false);
 
     void setPulseLength(uint16_t length);
-    void setNumBoards(uint8_t num_boards);
     void setSlowUpdateLength(uint16_t slow_update_length);
 
     private:

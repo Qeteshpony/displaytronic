@@ -1,10 +1,23 @@
 #include <Arduino.h>
 #include "flipdot.h"
+#include "debug.h"
 
 void Display::init(uint8_t num_boards)
 {
+    if (num_boards > MAX_BOARDS) num_boards = MAX_BOARDS;
     num_boards_ = num_boards;
+    fill(WHITE);
+    update();
     clear();
+    DEBUG("Display initialized. Number of boards: %u", num_boards_);
+}
+
+void Display::fill(bool color)
+{
+    for (uint8_t row = 0; row < BOARD_HEIGHT; row++)
+    {
+        for (uint8_t col = 0; col < BOARD_WIDTH * num_boards_; col++) setPixel(col, row, color);
+    }
 }
 
 void Display::clear()
@@ -13,12 +26,12 @@ void Display::clear()
     update();
 }
 
-void Display::setPixel(uint8_t x, uint8_t y, bool on)
+void Display::setPixel(uint8_t x, uint8_t y, bool color)
 {
     if (x >= num_boards_ * BOARD_WIDTH || y >= BOARD_HEIGHT) return;
     uint8_t index = x / 8;
     uint8_t bit = x % 8;
-    bitWrite(frame_[y][index], bit, on);
+    bitWrite(frame_[y][index], bit, color);
 }
 
 void Display::update(bool slowdown)
@@ -68,12 +81,6 @@ void Display::setPulseLength(uint16_t length)
     pulse_length_ = length;
 }
 
-void Display::setNumBoards(uint8_t num_boards)
-{
-    if (num_boards > MAX_BOARDS) num_boards = MAX_BOARDS;
-    num_boards_ = num_boards;
-}
-
 void Display::setSlowUpdateLength(uint16_t slow_update_length)
 {
     slow_update_length_ = slow_update_length;
@@ -90,6 +97,7 @@ void Display::pulse() const
 
 void Display::flipDot(uint8_t x, uint8_t y, bool on)
 {
+    DEBUG("flipDot: x=%d y=%d on=%d", x, y, on);
     uint8_t board = x / BOARD_WIDTH;
     uint8_t board_col = x % BOARD_WIDTH;
     uint8_t segment = board_col / COLS_PER_SEGMENT;

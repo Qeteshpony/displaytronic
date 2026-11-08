@@ -2,6 +2,7 @@
 
 #include "pin_init.h"
 #include "pins.h"
+#include "debug.h"
 
 void initPins()
 {
@@ -25,7 +26,5 @@ void initPins()
     pinMode(PIN_COLSEL_0, OUTPUT);
     pinMode(PIN_COLSEL_1, OUTPUT);
     pinMode(PIN_COLSEL_2, OUTPUT);
-
-    pinMode(PIN_MEASURE_5V, INPUT);
-    pinMode(PIN_MEASURE_24V, INPUT);
+    DEBUG("Pins initialized");
 }
