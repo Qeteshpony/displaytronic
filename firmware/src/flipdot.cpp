@@ -4,16 +4,25 @@
 
 void Display::init(uint8_t num_boards)
 {
+    // initialize the display driver. Set the number of boards connected to the controller between 1 and 8
     if (num_boards > MAX_BOARDS) num_boards = MAX_BOARDS;
+    if (num_boards < 1) num_boards = 1;
     num_boards_ = num_boards;
+
+    // turn the whole display white and then black again to make sure we have a defined state
     fill(WHITE);
     update();
     clear();
+
+    // turn on status led when display is initialized
+    digitalWrite(PIN_STATUS_LED, HIGH);
+
     DEBUG("Display initialized. Number of boards: %u", num_boards_);
 }
 
 void Display::fill(bool color)
 {
+    // fill the frame buffer with either white or black
     for (uint8_t row = 0; row < BOARD_HEIGHT; row++)
     {
         for (uint8_t col = 0; col < BOARD_WIDTH * num_boards_; col++) setPixel(col, row, color);
@@ -22,12 +31,14 @@ void Display::fill(bool color)
 
 void Display::clear()
 {
+    // clear the frame buffer and update the display
     memset(frame_, 0, sizeof(frame_));
     update();
 }
 
 void Display::setPixel(uint8_t x, uint8_t y, bool color)
 {
+    // change one pixel in the frame buffer
     if (x >= num_boards_ * BOARD_WIDTH || y >= BOARD_HEIGHT) return;
     uint8_t index = x / 8;
     uint8_t bit = x % 8;
@@ -36,6 +47,8 @@ void Display::setPixel(uint8_t x, uint8_t y, bool color)
 
 void Display::update(bool slowdown)
 {
+    // compare frame to current buffer and flip all changed dots
+    // slowdown makes a pause after each flip and tries to finish within slow_update_length_ ms
     const uint8_t bytes_per_row = (BOARD_WIDTH * num_boards_ + 7) / 8;
     uint16_t wait_between_bits = 0;
     if (slowdown)
@@ -73,6 +86,7 @@ void Display::update(bool slowdown)
             }
         }
     }
+    digitalWrite(PIN_STATUS_LED, HIGH);  // make sure status LED is on after flipping dots
 }
 
 void Display::setPulseLength(uint16_t length)
@@ -93,6 +107,7 @@ void Display::pulse() const
     delayMicroseconds(pulse_length_);
     digitalWrite(PIN_PULSE, LOW);
     interrupts();
+    digitalWrite(PIN_STATUS_LED, !digitalRead(PIN_STATUS_LED));  // toggle status led with every flip
 }
 
 void Display::flipDot(uint8_t x, uint8_t y, bool on)
