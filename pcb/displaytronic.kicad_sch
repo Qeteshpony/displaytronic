@@ -9286,6 +9286,16 @@
 	)
 	(wire
 		(pts
+			(xy 50.8 71.12) (xy 45.72 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c6764a4c-906c-4a45-80db-5514d058fca2")
+	)
+	(wire
+		(pts
 			(xy 185.42 39.37) (xy 186.69 39.37)
 		)
 		(stroke
@@ -9393,6 +9403,16 @@
 			(type default)
 		)
 		(uuid "ce012ae8-4a0e-45bb-a8ac-9be0c6299c29")
+	)
+	(wire
+		(pts
+			(xy 45.72 71.12) (xy 45.72 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d28c292a-7797-447d-a54f-b637199a2359")
 	)
 	(wire
 		(pts
@@ -12941,6 +12961,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C191023"
+			(at 199.39 44.45 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "8efdef0b-56d5-4877-bd26-c44c93a55602")
 		)
@@ -13159,7 +13190,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C15195"
 			(at 190.5 39.37 90)
 			(hide yes)
 			(show_name no)
@@ -14240,7 +14271,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C25796"
 			(at 195.58 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -15774,6 +15805,17 @@
 		)
 		(property "Sim.Pins" "1=K 2=A"
 			(at 162.56 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C2286"
+			(at 162.56 176.53 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17608,6 +17650,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 50.8 73.66 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "88f217f0-bf34-4110-bfe4-d3e6525f018f")
+		(property "Reference" "#PWR0123"
+			(at 44.45 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 50.8 75.946 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 50.8 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 50.8 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "88db4ac9-0dfc-43e1-83d2-ea2b74e0e86f")
+		)
+		(instances
+			(project "displaytronic"
+				(path "/4de28978-afad-4942-881a-b658e98f1f87"
+					(reference "#PWR0123")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
 		(at 86.36 154.94 0)
 		(unit 1)
@@ -18760,6 +18880,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C2286"
+			(at 147.32 176.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "d0c56214-3cf8-4f7c-b7f5-673aea4e3ca5")
 		)
@@ -18883,6 +19014,85 @@
 			(project "displaytronic"
 				(path "/4de28978-afad-4942-881a-b658e98f1f87"
 					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 55.88 71.12 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a5e6c3bf-7e94-4c3f-b23f-6026a2cc5ead")
+		(property "Reference" "J10"
+			(at 55.88 64.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWMout"
+			(at 55.88 67.31 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical"
+			(at 55.88 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 55.88 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 55.88 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1f2c5bb6-0330-489e-b201-2ad26010a50f")
+		)
+		(pin "2"
+			(uuid "c64784e1-ba29-4cb2-a336-f74c22fd85e0")
+		)
+		(instances
+			(project "displaytronic"
+				(path "/4de28978-afad-4942-881a-b658e98f1f87"
+					(reference "J10")
 					(unit 1)
 				)
 			)
@@ -19134,7 +19344,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C25756"
 			(at 86.36 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -21026,7 +21236,7 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
