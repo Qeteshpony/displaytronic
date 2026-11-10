@@ -28,8 +28,8 @@ constexpr uint8_t PIN_COLSEL_2    = PIN_PD5;
 constexpr uint8_t PIN_COLSEL_1    = PIN_PD6;
 constexpr uint8_t PIN_COLSEL_0    = PIN_PD7;
 
-constexpr uint8_t PIN_MEASURE_5V  = PIN_A6;
-constexpr uint8_t PIN_MEASURE_24V = PIN_A7;
+constexpr uint8_t PIN_MEASURE_LOGIC = PIN_A6;
+constexpr uint8_t PIN_MEASURE_FLIPDOT = PIN_A7;
 
 // pin groups
 

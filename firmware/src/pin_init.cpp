@@ -4,7 +4,7 @@
 #include "pins.h"
 #include "debug.h"
 
-void initPins()
+void pinInit()
 {
     pinMode(PIN_STATUS_LED, OUTPUT);
     pinMode(PIN_LED_PWM, OUTPUT);
@@ -27,4 +27,7 @@ void initPins()
     pinMode(PIN_COLSEL_1, OUTPUT);
     pinMode(PIN_COLSEL_2, OUTPUT);
     DEBUG("Pins initialized");
+
+    // set AREF to EXTERNAL
+    analogReference(EXTERNAL);
 }
