@@ -139,7 +139,7 @@ static void onReceive(int count)
             uint8_t rows = (bytes + display_->getBytesPerRow() - 1 ) / display_->getBytesPerRow();
             for (uint8_t row = 0; row < rows; row++)
             {
-                if (row >= Display::DISPLAY_HEIGHT) break;
+                if (y + row >= Display::DISPLAY_HEIGHT) break;
                 display_->writeRowBits(0, y + row, display_->getBytesPerRow() * 8, buffer + row * display_->getBytesPerRow(), display_->getBytesPerRow());
             }
             break;
