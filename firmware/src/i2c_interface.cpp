@@ -272,11 +272,6 @@ void i2cLoop()
             display_->update(true);
             break;
         }
-    case CMD_CLEAR_BUFFER:
-        {
-
-            break;
-        }
     case CMD_CLEAR_DISPLAY:
         {
             display_->clear();

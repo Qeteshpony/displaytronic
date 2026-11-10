@@ -59,17 +59,6 @@ int8_t Display::getPixel(uint8_t x, uint8_t y) const
     return bitRead(frame_[y][index], bit);
 }
 
-void Display::setRow(uint8_t row, uint8_t start_byte, const uint8_t* bytes)
-{
-    uint8_t max_index = sizeof(bytes);
-    if (start_byte >= getBytesPerRow()) return;
-    if (start_byte + max_index >= getBytesPerRow()) max_index = getBytesPerRow() - start_byte;
-    for (uint8_t byte_index = 0; byte_index < max_index; byte_index++)
-    {
-        frame_[row][byte_index + start_byte] = bytes[byte_index];
-    }
-}
-
 uint8_t Display::getRowByte(uint8_t row, uint8_t index) const
 {
     if (row >= DISPLAY_HEIGHT || index >= getBytesPerRow()) return 0;

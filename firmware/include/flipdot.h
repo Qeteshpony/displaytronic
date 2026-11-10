@@ -24,7 +24,6 @@ class Display
     void clear(bool do_update = true);
     void setPixel(uint8_t x, uint8_t y, bool color);
     [[nodiscard]] int8_t getPixel(uint8_t x, uint8_t y) const;
-    void setRow(uint8_t row, uint8_t start_byte, const uint8_t* bytes);
     [[nodiscard]] uint8_t getRowByte(uint8_t row, uint8_t index) const;
 
     void update(bool slowdown = false);
