@@ -1,18 +1,24 @@
 #include <Arduino.h>
 #include "flipdot.h"
 #include "debug.h"
+#include "i2c_interface.h"
 
 void Display::init(uint8_t num_boards)
 {
     // initialize the display driver. Set the number of boards connected to the controller between 1 and 8
-    if (num_boards > MAX_BOARDS) num_boards = MAX_BOARDS;
-    if (num_boards < 1) num_boards = 1;
-    num_boards_ = num_boards;
+    if (num_boards > 0 && num_boards_ == 0) num_boards_ = num_boards;
+    else if (num_boards_ == 0) return;
+
+    if (num_boards_ > MAX_BOARDS) num_boards_ = MAX_BOARDS;
+
+    bytes_per_row_ = (BOARD_WIDTH * num_boards_ + 7) / 8;
 
     // turn the whole display white and then black again to make sure we have a defined state
     fill(WHITE);
+    i2cDisable();
     update();
     clear();
+    i2cEnable();
 
     // turn on status led when display is initialized
     digitalWrite(PIN_STATUS_LED, HIGH);
@@ -23,40 +29,72 @@ void Display::init(uint8_t num_boards)
 void Display::fill(bool color)
 {
     // fill the frame buffer with either white or black
-    for (uint8_t row = 0; row < BOARD_HEIGHT; row++)
+    for (uint8_t row = 0; row < DISPLAY_HEIGHT; row++)
     {
         for (uint8_t col = 0; col < BOARD_WIDTH * num_boards_; col++) setPixel(col, row, color);
     }
 }
 
-void Display::clear()
+void Display::clear(bool do_update)
 {
     // clear the frame buffer and update the display
     memset(frame_, 0, sizeof(frame_));
-    update();
+    if (do_update) update();
 }
 
 void Display::setPixel(uint8_t x, uint8_t y, bool color)
 {
     // change one pixel in the frame buffer
-    if (x >= num_boards_ * BOARD_WIDTH || y >= BOARD_HEIGHT) return;
+    if (x >= num_boards_ * BOARD_WIDTH || y >= DISPLAY_HEIGHT) return;
     uint8_t index = x / 8;
     uint8_t bit = x % 8;
     bitWrite(frame_[y][index], bit, color);
 }
 
+int8_t Display::getPixel(uint8_t x, uint8_t y) const
+{
+    if (x >= num_boards_ * BOARD_WIDTH || y >= DISPLAY_HEIGHT) return -1;
+    uint8_t index = x / 8;
+    uint8_t bit = x % 8;
+    return bitRead(frame_[y][index], bit);
+}
+
+void Display::setRow(uint8_t row, uint8_t start_byte, const uint8_t* bytes)
+{
+    uint8_t max_index = sizeof(bytes);
+    if (start_byte >= getBytesPerRow()) return;
+    if (start_byte + max_index >= getBytesPerRow()) max_index = getBytesPerRow() - start_byte;
+    for (uint8_t byte_index = 0; byte_index < max_index; byte_index++)
+    {
+        frame_[row][byte_index + start_byte] = bytes[byte_index];
+    }
+}
+
+uint8_t Display::getRowByte(uint8_t row, uint8_t index) const
+{
+    if (row >= DISPLAY_HEIGHT || index >= getBytesPerRow()) return 0;
+    return current_[row][index];
+}
+
 void Display::update(bool slowdown)
+{
+    i2cDisable();  // disable I2C so it doesnt disturb the display update
+    updateCode(slowdown);  // run the update
+    i2cEnable();  // enable I2C
+    digitalWrite(PIN_STATUS_LED, HIGH);  // make sure status LED is on after flipping dots
+}
+
+void Display::updateCode(bool slowdown)
 {
     // compare frame to current buffer and flip all changed dots
     // slowdown makes a pause after each flip and tries to finish within slow_update_length_ ms
-    const uint8_t bytes_per_row = (BOARD_WIDTH * num_boards_ + 7) / 8;
     uint16_t wait_between_bits = 0;
     if (slowdown)
     {
         uint16_t different_bits = 0;
-        for (uint8_t row = 0; row < BOARD_HEIGHT; row++)
+        for (uint8_t row = 0; row < DISPLAY_HEIGHT; row++)
         {
-            for (uint8_t byte_index = 0; byte_index < bytes_per_row; byte_index++)
+            for (uint8_t byte_index = 0; byte_index < bytes_per_row_; byte_index++)
             {
                 different_bits += __builtin_popcount(frame_[row][byte_index] ^ current_[row][byte_index]);
             }
@@ -67,9 +105,9 @@ void Display::update(bool slowdown)
 
     bool first_flip = true;
 
-    for (uint8_t row = 0; row < BOARD_HEIGHT; row++)
+    for (uint8_t row = 0; row < DISPLAY_HEIGHT; row++)
     {
-        for (uint8_t byte_index = 0; byte_index < bytes_per_row; byte_index++)
+        for (uint8_t byte_index = 0; byte_index < bytes_per_row_; byte_index++)
         {
             if (uint8_t diff = frame_[row][byte_index] ^ current_[row][byte_index]; diff != 0)
             {
@@ -86,7 +124,6 @@ void Display::update(bool slowdown)
             }
         }
     }
-    digitalWrite(PIN_STATUS_LED, HIGH);  // make sure status LED is on after flipping dots
 }
 
 void Display::setPulseLength(uint16_t length)
@@ -98,6 +135,48 @@ void Display::setPulseLength(uint16_t length)
 void Display::setSlowUpdateLength(uint16_t slow_update_length)
 {
     slow_update_length_ = slow_update_length;
+}
+
+void Display::writeRowBits(uint8_t x, uint8_t y, uint8_t length, const uint8_t* data, uint8_t data_length)
+{
+    // Replace `length` bits of row `y` starting at column `x` with bits from `data`.
+    // data[0] bit 0 is the pixel at x. Surplus bits in data are ignored,
+    // the range is clipped to the active display width and to the available data.
+
+    const uint8_t width = BOARD_WIDTH * num_boards_;
+    if (y >= DISPLAY_HEIGHT || x >= width) return;
+    if (length > width - x) length = width - x;
+    if (length > data_length * 8) length = data_length * 8;
+    if (length == 0) return;
+
+    const uint8_t first = x / 8;                  // first affected byte
+    const uint8_t last = (x + length - 1) / 8;    // last affected byte
+    const uint8_t offset = x % 8;                 // shift needed to align source bits
+    const uint8_t end = x + length;               // first column after the range
+    uint8_t carry = 0;                            // overflow bits from the previous source byte
+
+    for (uint8_t d = first; d <= last; d++)
+    {
+        const uint8_t j = d - first;
+        const uint8_t src = (j < data_length) ? data[j] : 0;
+
+        // align source bits to the bit position in the target byte
+        uint8_t aligned;
+        if (offset == 0) aligned = src;
+        else
+        {
+            aligned = (src << offset) | carry;
+            carry = src >> (8 - offset);
+        }
+
+        // mask of the bits in this byte that belong to the range
+        const uint8_t byte_start = d * 8;
+        const uint8_t lo = (x > byte_start) ? x - byte_start : 0;
+        const uint8_t hi = (end < byte_start + 8) ? end - byte_start : 8;
+        const uint8_t mask = ((1u << hi) - 1) & ~((1u << lo) - 1);
+
+        frame_[y][d] = (frame_[y][d] & ~mask) | (aligned & mask);
+    }
 }
 
 void Display::pulse() const

@@ -1,18 +1,29 @@
 #include <Arduino.h>
 
 #include "pin_init.h"
-#include "pins.h"
 #include "flipdot.h"
 #include "debug.h"
+#include "i2c_interface.h"
+#include "voltage.h"
 
 static Display display;
 
 void setup() {
-    debugInit(115200);
+    debugInit(500000);
     DEBUG("Debugging is enabled");
-    initPins();
-    display.init(1);
+
+    pinInit();
+    i2cInit(display);  // the display is initialized via I2C
 }
 
+static uint16_t lastVoltageMeasurement_ = 0;
+
 void loop() {
+    i2cLoop();
+
+    if (lastVoltageMeasurement_ + 1000 < millis())
+    {
+        lastVoltageMeasurement_ = millis();
+        measureVoltages();
+    }
 }
