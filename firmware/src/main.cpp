@@ -16,12 +16,12 @@ void setup() {
     i2cInit(display);  // the display is initialized via I2C
 }
 
-static uint16_t lastVoltageMeasurement_ = 0;
+static uint32_t lastVoltageMeasurement_ = 0;
 
 void loop() {
     i2cLoop();
 
-    if (lastVoltageMeasurement_ + 1000 < millis())
+    if (millis() - lastVoltageMeasurement_ > 1000)
     {
         lastVoltageMeasurement_ = millis();
         measureVoltages();
