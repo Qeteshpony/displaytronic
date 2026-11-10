@@ -522,6 +522,130 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector:TestPoint_Alt"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint_Alt"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point (alternative shape)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TestPoint_Alt_0_1"
+				(polyline
+					(pts
+						(xy 0 2.54) (xy -0.762 3.302) (xy 0 4.064) (xy 0.762 3.302) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_Alt_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector_Generic:Conn_01x02"
 			(pin_names
 				(offset 1.016)
@@ -7308,7 +7432,7 @@
 	(text_box "Test Points"
 		(exclude_from_sim no)
 		(at 201.93 60.96 0)
-		(size 24.13 30.48)
+		(size 24.13 39.37)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)
@@ -10008,7 +10132,7 @@
 		(uuid "15e3678c-50bd-4cce-9773-e4c0cfcf8ff7")
 	)
 	(label "~{Pulse}"
-		(at 210.82 72.39 180)
+		(at 213.36 71.12 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10228,7 +10352,7 @@
 		(uuid "4c1847fa-8958-4b65-b73b-8f77cf410431")
 	)
 	(label "Row1L"
-		(at 210.82 82.55 180)
+		(at 213.36 81.28 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10328,7 +10452,7 @@
 		(uuid "66cc0ee5-0ffc-4f5a-b790-eea226767eac")
 	)
 	(label "AREF"
-		(at 210.82 87.63 180)
+		(at 213.36 86.36 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10738,7 +10862,7 @@
 		(uuid "af783752-55bc-4889-a455-5b989805aa2c")
 	)
 	(label "Row1H"
-		(at 210.82 77.47 180)
+		(at 213.36 76.2 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10958,7 +11082,7 @@
 		(uuid "d09025a9-93b3-4945-aff8-bd173282ed6d")
 	)
 	(label "Pulse"
-		(at 210.82 67.31 180)
+		(at 213.36 66.04 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12503,7 +12627,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 210.82 82.55 270)
+		(at 213.36 81.28 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12514,7 +12638,7 @@
 		(fields_autoplaced yes)
 		(uuid "14f4c069-582b-461a-8997-a239072add58")
 		(property "Reference" "TP4"
-			(at 215.9 81.2799 90)
+			(at 218.44 80.0099 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12524,8 +12648,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
-			(at 215.9 83.8199 90)
+		(property "Value" "Row1L"
+			(at 218.44 82.5499 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12536,7 +12660,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 210.82 87.63 0)
+			(at 213.36 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12547,7 +12671,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 210.82 87.63 0)
+			(at 213.36 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12558,7 +12682,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 210.82 82.55 0)
+			(at 213.36 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14781,6 +14905,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint_Alt")
+		(at 213.36 91.44 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4170f499-b1dd-46d7-9393-8507746e4ea7")
+		(property "Reference" "TP6"
+			(at 218.44 90.1699 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 218.44 92.7099 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
+			(at 213.36 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 213.36 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point (alternative shape)"
+			(at 213.36 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "26a70cac-b0f6-47f5-802e-80f3a8a8a47f")
+		)
+		(instances
+			(project "displaytronic"
+				(path "/4de28978-afad-4942-881a-b658e98f1f87"
+					(reference "TP6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
 		(at 19.05 156.21 0)
 		(mirror y)
@@ -15330,7 +15533,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 210.82 67.31 270)
+		(at 213.36 66.04 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15341,7 +15544,7 @@
 		(fields_autoplaced yes)
 		(uuid "51f3d43e-3917-45aa-a247-5b9cceb060f5")
 		(property "Reference" "TP1"
-			(at 215.9 66.0399 90)
+			(at 218.44 64.7699 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15351,8 +15554,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
-			(at 215.9 68.5799 90)
+		(property "Value" "Pulse"
+			(at 218.44 67.3099 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15363,7 +15566,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 210.82 72.39 0)
+			(at 213.36 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15374,7 +15577,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 210.82 72.39 0)
+			(at 213.36 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15385,7 +15588,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 210.82 67.31 0)
+			(at 213.36 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15907,6 +16110,85 @@
 			(project "displaytronic"
 				(path "/4de28978-afad-4942-881a-b658e98f1f87"
 					(reference "#PWR036")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 213.36 96.52 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5b4b8644-1d13-4b8f-97ef-e25de27762fb")
+		(property "Reference" "#PWR0125"
+			(at 207.01 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 209.55 96.5199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 213.36 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 213.36 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 213.36 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "af6ab242-2f22-4cc7-ba84-e779907285ac")
+		)
+		(instances
+			(project "displaytronic"
+				(path "/4de28978-afad-4942-881a-b658e98f1f87"
+					(reference "#PWR0125")
 					(unit 1)
 				)
 			)
@@ -18100,7 +18382,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 210.82 72.39 270)
+		(at 213.36 71.12 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -18111,7 +18393,7 @@
 		(fields_autoplaced yes)
 		(uuid "8b43040a-833c-4524-b129-643d917662f4")
 		(property "Reference" "TP2"
-			(at 215.9 71.1199 90)
+			(at 218.44 69.8499 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18121,8 +18403,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
-			(at 215.9 73.6599 90)
+		(property "Value" "~{Pulse}"
+			(at 218.44 72.3899 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18133,7 +18415,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 210.82 77.47 0)
+			(at 213.36 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18144,7 +18426,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 210.82 77.47 0)
+			(at 213.36 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18155,7 +18437,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 210.82 72.39 0)
+			(at 213.36 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18946,7 +19228,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 210.82 77.47 270)
+		(at 213.36 76.2 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -18957,7 +19239,7 @@
 		(fields_autoplaced yes)
 		(uuid "9963ff73-06b1-4189-806a-c9afaf91d1e6")
 		(property "Reference" "TP3"
-			(at 215.9 76.1999 90)
+			(at 218.44 74.9299 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18967,8 +19249,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
-			(at 215.9 78.7399 90)
+		(property "Value" "Row1H"
+			(at 218.44 77.4699 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18979,7 +19261,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 210.82 82.55 0)
+			(at 213.36 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18990,7 +19272,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 210.82 82.55 0)
+			(at 213.36 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19001,7 +19283,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 210.82 77.47 0)
+			(at 213.36 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20673,6 +20955,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint_Alt")
+		(at 213.36 96.52 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cf5a9684-5fcb-44fd-a318-2fe6f083b2cc")
+		(property "Reference" "TP7"
+			(at 218.44 95.2499 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 218.44 97.7899 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
+			(at 213.36 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 213.36 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point (alternative shape)"
+			(at 213.36 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "375cb334-077f-4971-80c8-a833acbdb9cb")
+		)
+		(instances
+			(project "displaytronic"
+				(path "/4de28978-afad-4942-881a-b658e98f1f87"
+					(reference "TP7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 72.39 66.04 0)
 		(unit 1)
@@ -20955,7 +21316,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 210.82 87.63 270)
+		(at 213.36 86.36 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -20966,7 +21327,7 @@
 		(fields_autoplaced yes)
 		(uuid "d3df0db3-2f22-490f-82f2-4bbfd3d19119")
 		(property "Reference" "TP5"
-			(at 215.9 86.3599 90)
+			(at 218.44 85.0899 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -20976,8 +21337,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
-			(at 215.9 88.8999 90)
+		(property "Value" "AREF"
+			(at 218.44 87.6299 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -20988,7 +21349,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 210.82 92.71 0)
+			(at 213.36 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20999,7 +21360,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 210.82 92.71 0)
+			(at 213.36 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21010,7 +21371,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 210.82 87.63 0)
+			(at 213.36 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21915,6 +22276,85 @@
 			(project "displaytronic"
 				(path "/4de28978-afad-4942-881a-b658e98f1f87"
 					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 213.36 91.44 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f47f078c-6d90-4ae5-b260-e334903ec15b")
+		(property "Reference" "#PWR0124"
+			(at 207.01 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 209.55 91.4399 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 213.36 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 213.36 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 213.36 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2b3610c2-1bd2-4cad-88b6-d6948df0777a")
+		)
+		(instances
+			(project "displaytronic"
+				(path "/4de28978-afad-4942-881a-b658e98f1f87"
+					(reference "#PWR0124")
 					(unit 1)
 				)
 			)
