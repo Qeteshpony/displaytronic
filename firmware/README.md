@@ -1,6 +1,6 @@
-# displaytronic firmware
+# Flipdot Firmware
 
-Firmware for the displaytronic controller board (ATmega328P). It drives one or more
+Firmware for the flipdot controller board (ATmega328P). It drives one or more
 DISPLAYTRONIC VS2812 flip-dot displays (28 × 12 dots each) and is controlled via I2C.
 
 ## I2C interface
