@@ -1467,25 +1467,25 @@
 		(fields_autoplaced yes)
 		(uuid "0d602ec0-ed46-4143-b5b2-023acd319624")
 		(property "Reference" "R20"
-			(at 137.16 66.0399 0)
+			(at 142.24 66.0399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.016 1.016)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Value" "10k"
-			(at 137.16 68.5799 0)
+		(property "Value" "2.2k"
+			(at 142.24 68.5799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
@@ -1543,7 +1543,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25744"
+		(property "LCSC" "C25879"
 			(at 139.7 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -1883,27 +1883,28 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
+		(fields_autoplaced yes)
 		(uuid "61850498-2435-414e-9b07-79daa1b46c3c")
 		(property "Reference" "R21"
-			(at 137.16 76.1999 0)
+			(at 142.24 76.1999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.016 1.016)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Value" "15k"
-			(at 137.16 78.7399 0)
+		(property "Value" "3.3k"
+			(at 142.24 78.7399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
@@ -1961,7 +1962,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25756"
+		(property "LCSC" "C25890"
 			(at 139.7 77.47 0)
 			(hide yes)
 			(show_name no)
