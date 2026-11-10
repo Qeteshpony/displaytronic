@@ -36,7 +36,7 @@ class Display
     [[nodiscard]] uint8_t getNumBoards() const { return num_boards_; }
     [[nodiscard]] uint8_t getBytesPerRow() const { return bytes_per_row_; }
     [[nodiscard]] uint16_t getPulseLength() const { return pulse_length_; }
-    [[nodiscard]] uint8_t getSlowUpdateLength() const { return slow_update_length_; }
+    [[nodiscard]] uint16_t getSlowUpdateLength() const { return slow_update_length_; }
 
     private:
 
