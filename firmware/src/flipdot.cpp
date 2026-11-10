@@ -180,7 +180,7 @@ void Display::pulse() const
 
 void Display::flipDot(uint8_t x, uint8_t y, bool on)
 {
-    DEBUG("flipDot: x=%d y=%d on=%d", x, y, on);
+    // DEBUG("flipDot: x=%d y=%d on=%d", x, y, on);  //only enable this when really needed
     uint8_t board = x / BOARD_WIDTH;
     uint8_t board_col = x % BOARD_WIDTH;
     uint8_t segment = board_col / COLS_PER_SEGMENT;
