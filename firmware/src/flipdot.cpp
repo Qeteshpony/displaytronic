@@ -2,6 +2,7 @@
 #include "flipdot.h"
 #include "debug.h"
 #include "i2c_interface.h"
+#include "watchdog.h"
 
 void Display::init(uint8_t num_boards)
 {
@@ -105,7 +106,18 @@ void Display::updateCode(bool slowdown)
                     if (bitRead(diff, bit))
                     {
                         if (first_flip) first_flip = false;
-                        else delay(wait_between_bits);
+                        else
+                        {
+                            uint16_t waitcount = wait_between_bits;
+                            while (waitcount > 250)
+                            {
+                                delay(250);
+                                waitcount -= 250;
+                                wdtFeed();
+                            }
+                            delay(waitcount);
+                        }
+                        wdtFeed();
                         flipDot(byte_index * 8 + bit, row, bitRead(frame_[row][byte_index], bit));
                         bitWrite(current_[row][byte_index], bit, bitRead(frame_[row][byte_index], bit));
                     }

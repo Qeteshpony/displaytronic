@@ -1,3 +1,4 @@
 CompileFlags:
   Add: [-Wno-unknown-attributes]
-  
+Diagnostics:
+  Suppress: [non_asm_stmt_in_naked_function]
