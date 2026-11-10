@@ -8,7 +8,7 @@ bool debugIsEnabled();
 
 #ifdef DEBUGGING
 
-#define DEBUG(message, ...) do { if (debugIsEnabled()) Serial.printf(F(message), ##__VA_ARGS__); } while (0)
+#define DEBUG(message, ...) do { if (debugIsEnabled()) Serial.printf(F(message "\r\n"), ##__VA_ARGS__); } while (0)
 
 #else
 
