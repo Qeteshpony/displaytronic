@@ -13492,7 +13492,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C11702"
+		(property "LCSC" "C25867"
 			(at 162.56 184.15 90)
 			(hide yes)
 			(show_name no)
@@ -15892,7 +15892,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C11702"
+		(property "LCSC" "C25867"
 			(at 147.32 184.15 90)
 			(hide yes)
 			(show_name no)

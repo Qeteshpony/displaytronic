@@ -10402,7 +10402,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C11702"
+		(property "LCSC" "C25867"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -24086,7 +24086,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C11702"
+		(property "LCSC" "C25867"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
