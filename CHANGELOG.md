@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/Qeteshpony/displaytronic/compare/v1.0.0...v1.0.1) (2026-11-11)
+
+
+### Bug Fixes
+
+* **pcb:** wrong part number for 2 resistors ([9722948](https://github.com/Qeteshpony/displaytronic/commit/9722948e23da16186d39c03120288686e7f75a20))
+
 ## 1.0.0 (2026-11-10)
 
 
